@@ -11,4 +11,5 @@ const stJson = JSON.stringify(data) ;
 qr.toFile('./qr.png', stJson, (error,code)=>{
     if(error) return console.log(error)
     
-})
+});
+console.log("done");
