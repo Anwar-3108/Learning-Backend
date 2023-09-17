@@ -1,3 +1,6 @@
+
+/*
+
 // create a folder name it syed
 //create a file in it named bio.txt and data into it.
 
@@ -7,6 +10,9 @@
 
 // rename the file name to mybio.txt
 // now delete both  the file and folder
+
+
+*/
 
 
 const fs = require('fs');
