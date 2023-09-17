@@ -1,15 +1,12 @@
-const qr = require('qrcode') ;
+const qr = require('qrcode');
 
-
-const data = {
-    'name':'syed' ,
-    'email' :'helloanwar1@gamil.com'
+const data={
+    name:'anwar',
+    pass:'123'
 }
 
-const stJson = JSON.stringify(data) ;
-
-qr.toFile('./qr.png', stJson, (error,code)=>{
-    if(error) return console.log(error)
-    
-});
-console.log("done");
+  const jdata = JSON.stringify(data) ;
+qr.toFile('./qr.png', jdata, (error)=>{
+    if(error) console.log(error)
+    console.log("done")
+})
