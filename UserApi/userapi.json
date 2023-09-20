@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "anwar",
+    "email": "syed121@gmail.com",
+    "address": {
+      "street": "5",
+      "city": "delhi",
+      "zipcode": "14001"
+    },
+    "phone": "9876543210",
+    "website": "http://syed-portfolio.com",
+    "company": {
+      "name": "the-company",
+      "catchPhrase": "the-catch-phrase",
+      "bs": "the-bs"
+    }
+  }
+]
