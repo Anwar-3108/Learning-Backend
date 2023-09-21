@@ -3,19 +3,19 @@ const http = require("http");
 
 const server = http.createServer((req, res) => {
 
-
+/*
 //1st way
 // server.on("request", (req, res) => {
 //   fs.readFile("input.txt", "utf8", (err, code) => {
 //     if (err) return console.log(err);
 //     res.end(code);
 //   });
+*/
 
+
+
+/*
 //2nd way
-
-
-
-
 
 
     const rstream = fs.createReadStream("input.txt");
@@ -30,6 +30,17 @@ const server = http.createServer((req, res) => {
   rstream.on("error", () => {
     res.end("file not found");
   });
+*/
+
+//3rd way
+const rstream= fs.createReadStream('input.txt');
+rstream.pipe(res)
+
+
+
+
+
+
 });
 
 
