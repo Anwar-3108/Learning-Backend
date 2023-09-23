@@ -1,0 +1,12 @@
+express help us to creatre server and API in a such simpler and express way.
+
+Middleware ecosystem
+
+express
+just remember method + routes
+
+
+Method/verb/http method /http verbs are all same 
+
+endpoint / route /api endpoint 
+
