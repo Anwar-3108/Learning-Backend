@@ -22,6 +22,10 @@ server.use((req, res, next) => {
   next();
 });
 
+
+
+
+/*
 const auth = (req, res, next) => {
 //   console.log(req.query);
   if (req.body.password === "123") {
@@ -39,6 +43,42 @@ server.get("/", auth, (req, res) => {
 });
 
 server.post("/", auth, (req, res) => {
+  res.json({ type: "POST" });
+});
+*/
+
+
+
+
+server.get("/", (req, res) => {
+  res.json({type:'GET'});
+});
+// READ GET /products
+
+server.get("/products", (req, res) => {
+  res.json(products);
+});
+
+// READ GET /products/:id
+server.get("/products/:id", (req, res) => {
+  const id = +req.params.id;
+ const product= products.find(p=>p.id===id)
+  res.json(product);
+});
+
+server.post("/", (req, res) => {
+  res.json({ type: "POST" });
+});
+
+
+
+//create POST /products
+server.post("/products", (req, res) => {
+  products.push(req.body)
+  console.log(req.body)
+  res.json({ type: "POST" });
+});
+server.post("/", (req, res) => {
   res.json({ type: "POST" });
 });
 
