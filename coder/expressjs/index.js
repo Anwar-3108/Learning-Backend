@@ -1,13 +1,7 @@
-const fs = require("fs");
-// const http = require('http');
-
-const index = fs.readFileSync("index.html", "utf-8");
-const data = JSON.parse(fs.readFileSync("data.json", "utf-8"));
-const products = data.products;
-
 const express = require("express");
-
 const server = express();
+const productRouter= require('./routes/product')
+
 server.use(express.json());
 
 server.use((req, res, next) => {
@@ -22,7 +16,7 @@ server.use((req, res, next) => {
   next();
 });
 
-
+server.use('/api/v1', productRouter.router)
 
 
 /*
@@ -47,52 +41,24 @@ server.post("/", auth, (req, res) => {
 });
 */
 
-
-
-
-server.get("/", (req, res) => {
-  res.json({type:'GET'});
-});
+// server.get("/", (req, res) => {
+//   res.json({ type: "GET" });
+// });
 // READ GET /products
 
-server.get("/products", (req, res) => {
-  res.json(products);
-});
-
 // READ GET /products/:id
-server.get("/products/:id", (req, res) => {
-  const id = +req.params.id;
- const product= products.find(p=>p.id===id)
-  res.json(product);
-});
 
-server.post("/", (req, res) => {
-  res.json({ type: "POST" });
-});
-
-
+// server.post("/", (req, res) => {
+//   res.json({ type: "POST" });
+// });
 
 //create POST /products
-server.post("/products", (req, res) => {
-  products.push(req.body)
-  console.log(req.body)
-  res.json({ type: "POST" });
-});
-server.post("/", (req, res) => {
-  res.json({ type: "POST" });
-});
 
-server.patch("/", (req, res) => {
-  res.json({ type: "PATCH" });
-});
+// server.post("/", (req, res) => {
+//   res.json({ type: "POST" });
+// });
 
-server.put("/", (req, res) => {
-  res.json({ type: "PUT" });
-});
 
-server.delete("/", (req, res) => {
-  res.json({ type: "DELETE" });
-});
 
 server.get("/demo", (req, res) => {
   res.json(products);
